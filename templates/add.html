@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>New User Form</title>
+</head>
+<body>
+    <h1>Add New User Form</h1>
+    <p>Fill out this form with the required information for new user.</p>
+    <form method="POST" action='/add'>
+      <fieldset>
+        <label for="author">Enter Your Complete Name: <input id="author" name="author" type="text" required />
+        </label><br><br>
+        <label for="title">Post title: <input id="title" name="title" type="text" required />
+        </label><br><br>
+        <label for="content">Write your post:
+        </label>
+          <textarea id="content" name="content" rows="5" required></textarea>
+      </fieldset>
+        <button>Submit</button>
+    </form>
+
+</body>
+</html>
