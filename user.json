@@ -1,4 +1,27 @@
 [
-    {"id": 1, "author": "John Doe", "title": "First Post", "content": "This is my first post."},
-    {"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."}
+    {
+        "id": 1,
+        "author": "John Doe",
+        "title": "First Post",
+        "content": "This is my first post.",
+        "likes": 2
+    },
+    {
+        "id": 2,
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is another post."
+    },
+    {
+        "id": 3,
+        "author": "Janna Dane",
+        "title": "Third Post",
+        "content": "This is my third post."
+    },
+    {
+        "id": 4,
+        "author": "John Dave",
+        "title": "Fourth Post",
+        "content": "This is my fourth post."
+    }
 ]
