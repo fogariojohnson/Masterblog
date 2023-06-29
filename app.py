@@ -6,6 +6,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    """
+    Fetch the JSON file.
+
+    Returns:
+        index.html(html file): Uses the index template.
+    """
     # add code here to fetch the job posts from a file
     with open("user.json", "r") as file_obj:
         blog_posts = json.loads(file_obj.read())
@@ -14,6 +20,12 @@ def index():
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
+    """
+    Allows user to add a post on the blog site.
+
+    Returns:
+        add.html(html file): Uses the add template.
+    """
     with open("user.json", "r") as file_obj:
         blog_posts = json.loads(file_obj.read())
 
@@ -46,6 +58,15 @@ def add():
 
 @app.route('/delete/<int:post_id>', methods=['POST'])
 def delete(post_id):
+    """
+    Allows user to delete a post on the blog site.
+
+    Args:
+        post_id(int): The unique ID number of the post.
+
+    Returns:
+        index.html(html file): Uses the index template.
+    """
     with open("user.json", "r") as file_obj:
         blog_posts = json.loads(file_obj.read())
 
@@ -63,6 +84,15 @@ def delete(post_id):
 
 @app.route('/update/<int:post_id>', methods=['GET', 'POST'])
 def update(post_id):
+    """
+    Allows user to change or update a post on the blog site.
+
+    Args:
+        post_id(int): The unique ID number of the post.
+
+    Returns:
+        index.html(html file): Uses the index template.
+    """
     # Fetch the blog posts from the JSON file
     with open("user.json", "r") as file_obj:
         blog_posts = json.loads(file_obj.read())
@@ -92,6 +122,15 @@ def update(post_id):
 
 @app.route('/like/<int:post_id>', methods=['POST'])
 def like(post_id):
+    """
+    Allows user to like a post on the blog site and keep track of the number of likes.
+
+    Args:
+        post_id(int): The unique ID number of the post.
+
+    Returns:
+        index.html(html file): Uses the index template.
+    """
     # Fetch the blog posts from the JSON file
     with open("user.json", "r") as file_obj:
         blog_posts = json.loads(file_obj.read())
@@ -114,4 +153,4 @@ def like(post_id):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000, debug=True)
